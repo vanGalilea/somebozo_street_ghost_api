@@ -7,11 +7,12 @@ module.exports = function (app) {
   const { Schema } = mongooseClient;
 
   const photos = new Schema({
-    title: { type: String, default: 'no title' },
-    url: { type: String, required: true },
-    featured: { type: Boolean, default: false },
-    createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now }
+    title:       { type: String, default: 'no title' },
+    description: { type: String, required: false },
+    url:         { type: String, required: true },
+    featured:    { type: Boolean, default: false },
+    createdAt:   { type: Date, default: Date.now },
+    updatedAt:   { type: Date, default: Date.now }
   });
 
   return mongooseClient.model('photos', photos);
