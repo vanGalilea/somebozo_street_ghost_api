@@ -7,7 +7,7 @@ module.exports = function (app) {
   const { Schema } = mongooseClient;
 
   const photos = new Schema({
-    title: { type: String, required: true },
+    title: { type: String, default: 'no title' },
     url: { type: String, required: true },
     featured: { type: Boolean, default: false },
     createdAt: { type: Date, default: Date.now },
