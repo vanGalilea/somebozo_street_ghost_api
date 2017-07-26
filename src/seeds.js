@@ -9,13 +9,16 @@ const user = seedsIgnore.user;
 
 const photos = [
   {
-    title: 'Pussy Heaven',
-    url: 'https://scontent.cdninstagram.com/t51.2885-15/s750x750/sh0.08/e35/19932379_1799274620364822_3705518103031971840_n.jpg'
+    originalTitle: 'Pussy Heaven',
+    original: 'http://res.cloudinary.com/dqmqi1nxq/image/upload/v1501092751/pbqifmsdj2wlroqn9htu.jpg',
+    thumbnail: 'http://res.cloudinary.com/dqmqi1nxq/image/upload/c_scale,w_150/v1501092751/pbqifmsdj2wlroqn9htu.jpg',
+    description: 'Awesome Heaven, you better believe it'
   },
   {
-    title: 'King Toast',
-    url: 'https://scontent.cdninstagram.com/t51.2885-15/sh0.08/e35/p750x750/19624148_1406039082812044_4535798842569785344_n.jpg',
-    featured: true
+    originalTitle: 'Alien Butterfly',
+    original: 'http://res.cloudinary.com/dqmqi1nxq/image/upload/v1501092681/v28jlgkhhavgxg9i5fht.jpg',
+    thumbnail: 'http://res.cloudinary.com/dqmqi1nxq/image/upload/c_scale,w_150/v1501092681/v28jlgkhhavgxg9i5fht.jpg',
+    description: 'Awesome Heaven, you better believe it'
   }
 ];
 
@@ -38,7 +41,7 @@ feathersClient.service('users').create(user)
         photos.map((photo) => {
           feathersClient.service('photos').create(photo)
             .then((result) => {
-              console.log('Photo seeded...', result.title);
+              console.log('Photo seeded...', result.originalTitle);
             }).catch((error) => {
               console.error('Error seeding photo!', error.message);
             });
