@@ -1,4 +1,5 @@
 {
-  "host": "somebozo_api-app.feathersjs.com",
-  "port": "PORT"
+  "host": "somebozo-api.herokuapp.com",
+  "port": "PORT",
+  "mongodb": "MONGODB_URI"
 }
